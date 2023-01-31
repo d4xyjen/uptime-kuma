@@ -46,16 +46,16 @@ class Discord extends NotificationProvider {
                 let discorddowndata = {
                     username: discordDisplayName,
                     embeds: [{
-                        title: "❌ Your service " + monitorJSON["name"] + " went down. ❌",
+                        title: "❌ Your Product " + monitorJSON["name"] + " Is On Stock. ❌",
                         color: 16711680,
                         timestamp: heartbeatJSON["time"],
                         fields: [
                             {
-                                name: "Service Name",
+                                name: "Product Name",
                                 value: monitorJSON["name"],
                             },
                             {
-                                name: monitorJSON["type"] === "push" ? "Service Type" : "Service URL",
+                                name: monitorJSON["type"] === "push" ? "Service Type" : "Product URL",
                                 value: monitorJSON["type"] === "push" ? "Heartbeat" : address,
                             },
                             {
@@ -63,8 +63,7 @@ class Discord extends NotificationProvider {
                                 value: heartbeatJSON["time"],
                             },
                             {
-                                name: "Error",
-                                value: heartbeatJSON["msg"] == null ? "N/A" : heartbeatJSON["msg"],
+                               
                             },
                         ],
                     }],
@@ -81,16 +80,16 @@ class Discord extends NotificationProvider {
                 let discordupdata = {
                     username: discordDisplayName,
                     embeds: [{
-                        title: "✅ Your service " + monitorJSON["name"] + " is up! ✅",
+                        title: "✅ Your Product " + monitorJSON["name"] + " Out of Stock! ✅",
                         color: 65280,
                         timestamp: heartbeatJSON["time"],
                         fields: [
                             {
-                                name: "Service Name",
+                                name: "Product Name",
                                 value: monitorJSON["name"],
                             },
                             {
-                                name: monitorJSON["type"] === "push" ? "Service Type" : "Service URL",
+                                name: monitorJSON["type"] === "push" ? "Service Type" : "Product URL",
                                 value: monitorJSON["type"] === "push" ? "Heartbeat" : address,
                             },
                             {
